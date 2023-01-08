@@ -87,16 +87,7 @@ public class TicTacToe {
       }
       
       // Vérification du match nul
-      boolean isDraw = true;
-      for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-          if (board[i][j] == " ") {
-            isDraw = false;
-            break;
-          }
-        }
-      }
-      if (isDraw) {
+      if (isDraw(board)) {
         System.out.println("Match nul !");
         break;
       }
@@ -108,6 +99,20 @@ public class TicTacToe {
         currentPlayer = "X";
       }
     }
+  }
+  
+  //Vérification du match nul
+  private boolean isDraw(String[][] board) {
+	  boolean isDraw=true;
+	  for (int i = 0; i < 3; i++) {
+	        for (int j = 0; j < 3; j++) {
+	          if (board[i][j] == " ") {
+	            isDraw = false;
+	            break;
+	          }
+	        }
+	      }
+	  return isDraw;
   }
   
   // Méthode pour vérifier si le joueur courant a gagné
